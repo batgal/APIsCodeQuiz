@@ -8,10 +8,35 @@
     <title>Document</title>
   </head>
   <body>
-    <nav>
-      <div>High Scores</div>
-      <div>Time:</div>
-    </nav>
-    <script src="./script.js"></script>
+    <div class="container">
+      <nav>
+        <div class="highScores">
+          <a href="./index2.html" target=".blank">High Scores</a>
+        </div>
+        <div id="timer">Time:</div>
+      </nav>
+      <main>
+        <section>
+          <h1>Coding Quiz Challenge</h1>
+          <p>
+            You will be presented with a series of coding-related questions with
+            mutiple possible answers. Please select the most accurate answer to
+            move on to the next question. You will be given instant feedback
+            near the bottom of the application (Correct or Incorrect). Check out
+            your highscore on the high scores page to see how you did compared
+            to your peers! Good Luck!
+          </p>
+        </section>
+      </main>
+      <div id="buttons">
+        <input
+          href="./Game1.html"
+          id="startButton"
+          type="button"
+          value="Start"
+        />
+      </div>
+      <script src="./script.js"></script>
+    </div>
   </body>
 </html>

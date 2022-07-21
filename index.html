@@ -4,39 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>APIs Code Quiz Home</title>
   </head>
   <body>
-    <div class="container">
+    <div class="flexContainer">
       <nav>
-        <div class="highScores">
-          <a href="./index2.html" target=".blank">High Scores</a>
-        </div>
-        <div id="timer">Time:</div>
+        <ul class="nav">
+          <li class="highScores">View High Scores</li>
+          <li class="timer">Timer</li>
+        </ul>
       </nav>
-      <main>
-        <section>
-          <h1>Coding Quiz Challenge</h1>
-          <p>
-            You will be presented with a series of coding-related questions with
-            mutiple possible answers. Please select the most accurate answer to
-            move on to the next question. You will be given instant feedback
-            near the bottom of the application (Correct or Incorrect). Check out
-            your highscore on the high scores page to see how you did compared
-            to your peers! Good Luck!
-          </p>
-        </section>
-      </main>
-      <div id="buttons">
-        <input
-          href="./Game1.html"
-          id="startButton"
-          type="button"
-          value="Start"
-        />
-      </div>
-      <script src="./script.js"></script>
+      <h1>Coding Quiz Challenge</h1>
+      <p>
+        You will be presented with a series of coding-related questions with
+        mutiple possible answers. Please select the most accurate answer to move
+        on to the next question. You will be given instant feedback near the
+        bottom of the application (Correct or Incorrect). Check out your
+        highscore on the high scores page to see how you did compared to your
+        peers! Good Luck!
+      </p>
+      <button class="btn">Start</button>
+
+      <script src="./assets/script.js"></script>
     </div>
   </body>
 </html>

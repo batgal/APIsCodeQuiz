@@ -1,68 +1,15 @@
-* {
-  width: auto;
-  background-color: pink;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  color: mediumslateblue;
-  font-size: larger;
-}
-.container {
-}
 .highScores {
-  color: cornflowerblue;
+  justify-items: space-between;
 }
-main {
+.timer {
+  justify-items: space-between;
+}
+.btn {
+}
+.nav {
+  list-style: none;
+  align-items: center;
+}
+.flexContainers {
   display: flex;
-  color: cornflowerblue;
-  justify-content: center;
-}
-h1 {
-  text-align: center;
-  padding: 33px;
-  flex-wrap: wrap;
-  font-size: 50px;
-}
-p {
-  width: 1500px;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 30px;
-  padding: 33px 33px;
-  border: 3px;
-  border-style: double;
-  border-color: aliceblue;
-  border-radius: 25px;
-  color: aliceblue;
-  background-color: rgb(120, 189, 166);
-}
-section {
-  border: 3px;
-  padding: 0 0 30px 30px;
-}
-div {
-  display: flex;
-  justify-content: center;
-}
-#startButton {
-  padding: 11px 33px;
-  background-color: palegoldenrod;
-  color: rgb(237, 100, 100);
-  border-radius: 25px;
-  font-weight: 300;
-  font-size: 20px;
-  border-color: aliceblue;
-  border-style: double;
-}
-
-a:-webkit-any-link {
-  color: mediumpurple;
-  cursor: pointer;
-  text-decoration: underline;
-}
-a:-webkit-any-link:active {
-  color: mediumpurple;
 }

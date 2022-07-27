@@ -1,15 +1,39 @@
-.highScores {
-  justify-items: space-between;
-}
-.timer {
-  justify-items: space-between;
+.answers {
 }
 .btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+.container {
+  max-width: 800px;
+  margin: 100px auto;
+  text-align: center;
+}
+.finalScreen {
+}
+.hidden {
+  display: none;
+}
+.highScores {
+  position: absolute;
+  left: 11px;
+  top: 11px;
+}
+.initials {
 }
 .nav {
   list-style: none;
-  align-items: center;
 }
-.flexContainers {
-  display: flex;
+.questions {
+}
+.timer {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+}
+#highScoreSubmit {
+}
+#multChoice {
+}
+#question {
 }

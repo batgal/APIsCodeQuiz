@@ -1,15 +1,30 @@
-.answers {
+a:link {
+  color: rgb(70, 159, 72);
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(88, 213, 90);
+}
+h1 {
+  color: rgb(70, 159, 72);
 }
 .btn {
+  cursor: pointer;
   padding: 10px 20px;
   border-radius: 25px;
+  display: inline-block;
+  color: white;
+  background-color: rgb(70, 159, 72);
+  transition: background-color 0.08s;
+}
+.btn:hover {
+  background-color: white;
+  color: rgb(70, 159, 72);
 }
 .container {
   max-width: 800px;
   margin: 100px auto;
   text-align: center;
-}
-.finalScreen {
 }
 .hidden {
   display: none;
@@ -18,6 +33,9 @@
   position: absolute;
   left: 11px;
   top: 11px;
+}
+.highScores:hover {
+  text-decoration: underline;
 }
 .initials {
 }
@@ -30,6 +48,7 @@
   position: absolute;
   right: 11px;
   top: 11px;
+  color: rgb(70, 159, 72);
 }
 #highScoreSubmit {
 }

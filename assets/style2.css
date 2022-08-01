@@ -1,0 +1,51 @@
+h1 {
+  color: rgb(70, 159, 72);
+}
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 25px;
+  display: inline-block;
+  color: white;
+  background-color: rgb(70, 159, 72);
+  transition: background-color 0.08s;
+}
+button:hover {
+  background-color: white;
+  color: rgb(70, 159, 72);
+}
+.container {
+  max-width: 800px;
+  margin: 100px auto;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.highScores {
+  position: absolute;
+  left: 11px;
+  top: 11px;
+}
+.highScores:hover {
+  text-decoration: underline;
+}
+.initials {
+}
+.nav {
+  list-style: none;
+}
+.questions {
+}
+.timer {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+  color: rgb(70, 159, 72);
+}
+#highScoreSubmit {
+}
+#multChoice {
+}
+#question {
+}

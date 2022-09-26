@@ -1,18 +1,184 @@
-// var quizStart = document.getElementById("startButton");
-// var timerEl = document.getElementById("timer");
-// var viewHigh = document.getElementById("view-high-scores");
-// var quizScores = document.getElementById("scores");
-// var quizQuestion = document.getElementById("question");
-// var multChoice = document.getElementById("choices");
-// var quizResult = document.getElementById("result");
-// var quizButtons = document.getElementById("buttons");
+var questionsEl = document.querySelector("#questions");
+var timerEl = document.querySelector("#time");
+var choicesEl = document.querySelector("#multChoice");
+var submitBtn = document.querySelector("#highScoreSubmit");
+var startBtn = document.querySelector(".btn");
+var initialsEl = document.querySelector(".initials");
 
-// function startQuiz({ })
-// quizStart.addEventListener("click",)
+// quiz state variables
+var currentQuestionIndex = 0;
+var time = 60;
+var timerId;
 
-// function timer() { var timeLeft = 33; var timeInterval = setInterval(function () { if (timeLeft > 1) { timerEl.textContent = timeLeft + " seconds remaing"; timeLeft--; } else if (timeLeft === 1) { timerEl.textContent = timeLeft + " second remaining"; timeLeft--; } else { timerEl.textContent = ""; clearInterval(timeInterval); displayMessage(); } }, 1000); }
+function startQuiz() {
+  // hide start screen
+  var startScreenEl = document.getElementById("start");
+  startScreenEl.setAttribute("class", "hidden");
 
-// timer();
+  // un-hide questions section
+  questionsEl.removeAttribute("class");
+
+  // start timer
+  timerId = setInterval(clockTick, 1000);
+
+  // show starting time
+  timerEl.textContent = time;
+
+  getQuestion();
+}
+
+function getQuestion() {
+  // get current question object from array
+  var currentQuestion = questions[currentQuestionIndex];
+
+  // update title with current question
+  var titleEl = document.getElementById("question-header");
+  titleEl.textContent = currentQuestion.title;
+
+  // clear out any old question choices
+  choicesEl.innerHTML = "";
+
+  // loop over choices
+  currentQuestion.choices.forEach(function (choice, i) {
+    // create new button for each choice
+    var choiceNode = document.createElement("button");
+    choiceNode.setAttribute("class", "choice");
+    choiceNode.setAttribute("value", choice);
+
+    choiceNode.textContent = i + 1 + ". " + choice;
+
+    // attach click event listener to each choice
+    choiceNode.onclick = questionClick;
+
+    // display on the page
+    choicesEl.appendChild(choiceNode);
+  });
+}
+
+function questionClick() {
+  // check if user guessed wrong
+  if (this.value !== questions[currentQuestionIndex].answer) {
+    // penalize time
+    time -= 15;
+
+    if (time < 0) {
+      time = 0;
+    }
+    // display new time on page
+    timerEl.textContent = time;
+  }
+
+  // next question
+  currentQuestionIndex++;
+
+  // time checker
+  if (currentQuestionIndex === questions.length) {
+    quizEnd();
+  } else {
+    getQuestion();
+  }
+}
+
+function quizEnd() {
+  // stop timer
+  clearInterval(timerId);
+
+  // show end screen
+  var endScreenEl = document.getElementById("end-screen");
+  endScreenEl.removeAttribute("class");
+
+  // show final score
+  var finalScoreEl = document.getElementById("final-score");
+  finalScoreEl.textContent = time;
+
+  // hide questions section
+  questionsEl.setAttribute("class", "hidden");
+}
+
+function clockTick() {
+  // update time
+  time--;
+  timerEl.textContent = time;
+
+  // check if user ran out of time
+  if (time <= 0) {
+    quizEnd();
+  }
+}
+
+function saveHighscore() {
+  // get value of input box
+  var initials = initialsEl.value.trim();
+
+  if (initials !== "") {
+    // get saved scores from localstorage, or if not any, set to empty array
+    var highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+    // format new score object for current user
+    var newScore = {
+      score: time,
+      initials: initials,
+    };
+
+    // save to localstorage
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    // redirect to next page
+    window.location.href = "score.html";
+  }
+}
+
+function checkForEnter(event) {
+  // "13" represents the enter key
+  if (event.key === "Enter") {
+    saveHighscore();
+  }
+}
+
+// submit initials
+submitBtn.onclick = saveHighscore;
+
+// start quiz
+startBtn.onclick = startQuiz;
+
+initialsEl.onkeyup = checkForEnter;
+
+var questions = [
+  {
+    title: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts",
+  },
+  {
+    title: "The condition in an if / else statement is enclosed within ____.",
+    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    answer: "parentheses",
+  },
+  {
+    title: "Arrays in JavaScript can be used to store ____.",
+    choices: [
+      "numbers and strings",
+      "other arrays",
+      "booleans",
+      "all of the above",
+    ],
+    answer: "all of the above",
+  },
+  {
+    title:
+      "String values must be enclosed within ____ when being assigned to variables.",
+    choices: ["commas", "curly brackets", "quotes", "parentheses"],
+    answer: "quotes",
+  },
+  {
+    title:
+      "A very useful tool used during development and debugging for printing content to the debugger is:",
+    choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
+    answer: "console.log",
+  },
+];
 
 // Timer starts with start button Push
 // first question appears with start button push

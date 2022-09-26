@@ -32,8 +32,8 @@ function getQuestion() {
   var currentQuestion = questions[currentQuestionIndex];
 
   // update title with current question
-  var titleEl = document.getElementById("question-header");
-  titleEl.textContent = currentQuestion.title;
+  var titleEl = document.getElementById("questionHeader");
+  titleEl.textContent = currentQuestion.questionHeader;
 
   // clear out any old question choices
   choicesEl.innerHTML = "";

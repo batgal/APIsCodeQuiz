@@ -1,11 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", serif;
+}
+body {
+  background: #9a30db;
+}
+.startButton,
+.infoBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.startButton button {
+  font-size: 25px;
+  font-weight: 500;
+  color: #9a30db;
+  padding: 15px 30px;
+  outline: #3052db;
+  border: 11px #9a30db double;
+  border-radius: 5px;
+  background: #eedff8;
+  cursor: pointer;
+}
+.infoBox {
+  display: none;
+  width: 600px;
+  background: #eedff8;
+  border-radius: 5px;
+}
+
+.infoBox .infoTitle {
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #9a30db;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  font-size: 30px;
+  font-weight: 400;
+}
+.infoBox .instructions {
+  padding: 16px 36px;
+}
+.infoBox .instructions .info {
+  margin: 5px 0;
+  font-size: 18px;
+}
+.infoBox .buttons {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 36px;
+  border-top: 1px solid #eedff8;
+}
+.infoBox .buttons button {
+  margin: 0 5px;
+  height: 36px;
+  width: 100px;
+  border: 1px solid #9a30db;
+  background-color: #eedff8;
+  border-radius: 5px;
+  color: #3052db;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.infoBox .buttons {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 35px;
+  border-top: 1px solid #eedff8;
+}
+.infoBox .buttons button {
+  margin: 0 5px;
+  height: 36px;
+  width: 100px;
+  border: 1px solid;
+  background: #9a30db;
+  border-radius: 5px;
+  color: #eedff8;
+  font-size: 16px;
+  font-weight: 400px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.buttons button.restart {
+  color: #eedff8;
+  background: #9a30db;
+}
+.buttons button.restart:hover {
+  background: #c38de5;
+}
+.buttons button.quit {
+  color: #eedff8;
+  background: #9a30db;
+}
+.buttons button.quit:hover {
+  background: #c38de5;
+}
+.nav {
+  background: #eedff8;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* .highScores {
+  display: flex;
+  justify-content: flex-start;
+} */
+/* .highScores:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.timer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+} */
 a:link {
-  color: rgb(70, 159, 72);
+  color: #9a30db;
   text-decoration: none;
 }
 a:visited {
-  color: rgb(88, 213, 90);
+  color: #9a30db;
 }
-h1 {
+/* h1 {
   color: rgb(70, 159, 72);
 }
 .btn {
@@ -49,4 +180,4 @@ h1 {
   right: 11px;
   top: 11px;
   color: rgb(70, 159, 72);
-}
+} */

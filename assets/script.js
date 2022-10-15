@@ -4,6 +4,40 @@ var choicesEl = document.querySelector("#multChoice");
 var submitBtn = document.querySelector("#highScoreSubmit");
 var startBtn = document.querySelector(".btn");
 var initialsEl = document.querySelector(".initials");
+var questions = [
+  {
+    title: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts",
+  },
+  {
+    title: "The condition in an if / else statement is enclosed within ____.",
+    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    answer: "parentheses",
+  },
+  {
+    title: "Arrays in JavaScript can be used to store ____.",
+    choices: [
+      "numbers and strings",
+      "other arrays",
+      "booleans",
+      "all of the above",
+    ],
+    answer: "all of the above",
+  },
+  {
+    title:
+      "String values must be enclosed within ____ when being assigned to variables.",
+    choices: ["commas", "curly brackets", "quotes", "parentheses"],
+    answer: "quotes",
+  },
+  {
+    title:
+      "A very useful tool used during development and debugging for printing content to the debugger is:",
+    choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
+    answer: "console.log",
+  },
+];
 
 // quiz state variables
 var currentQuestionIndex = 0;
@@ -27,13 +61,20 @@ function startQuiz() {
   getQuestion();
 }
 
+var answers = ["", "", "", ""];
+var correct = 0;
+var score = 0;
+var questionIndex = 0;
+var timer = 0;
+var timeRemaining = 120;
+("//////////");
 function getQuestion() {
   // get current question object from array
   var currentQuestion = questions[currentQuestionIndex];
 
   // update title with current question
   var titleEl = document.getElementById("questionHeader");
-  titleEl.textContent = currentQuestion.questionHeader;
+  titleEl.textContent = currentQuestion.title;
 
   // clear out any old question choices
   choicesEl.innerHTML = "";
@@ -144,41 +185,6 @@ submitBtn.onclick = saveHighscore;
 startBtn.onclick = startQuiz;
 
 initialsEl.onkeyup = checkForEnter;
-
-var questions = [
-  {
-    title: "Commonly used data types DO NOT include:",
-    choices: ["strings", "booleans", "alerts", "numbers"],
-    answer: "alerts",
-  },
-  {
-    title: "The condition in an if / else statement is enclosed within ____.",
-    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    answer: "parentheses",
-  },
-  {
-    title: "Arrays in JavaScript can be used to store ____.",
-    choices: [
-      "numbers and strings",
-      "other arrays",
-      "booleans",
-      "all of the above",
-    ],
-    answer: "all of the above",
-  },
-  {
-    title:
-      "String values must be enclosed within ____ when being assigned to variables.",
-    choices: ["commas", "curly brackets", "quotes", "parentheses"],
-    answer: "quotes",
-  },
-  {
-    title:
-      "A very useful tool used during development and debugging for printing content to the debugger is:",
-    choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
-    answer: "console.log",
-  },
-];
 
 // Timer starts with start button Push
 // first question appears with start button push
